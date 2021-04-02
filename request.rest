@@ -1,39 +1,64 @@
 GET http://localhost:3000/users
-Authorization: Basic eyJhbGciOiJIUzI1NiJ9.RXZlQGRvbWFpbi5jb20.Yv4Wxu-JLHvZ67xQnD9h783vUWbj8dIGq6Pyu_ggPIw
+Authorization: Basic eyJhbGciOiJIUzI1NiJ9.bmV3YWNjQGRvbWFpbi5jb20.SzEaREIFhNgOQ5gWbHYw7poh_6encpzPp8a06lBL-wE
 
 ###
-
+#login user gaining accessToken
 POST http://localhost:3000/login
 Content-Type: application/json
 
 {
-    "username": "Eve@domain.com",
-    "password": "Soword"
+    "username": "newacc@domain.com",
+    "password": "newacc"
 }
 
 
 ###
-
+#creating user
 POST http://localhost:3000/signup
 Content-Type: application/json
 
 {
-    "username": "Eve@domain.com",
-    "firstName": "Eve",
+    "username": "newacc@domain.com",
+    "firstName": "new",
     "LastName": "sinorita",
-    "password": "Soword",
+    "password": "newacc",
     "role": "user"
 }
 
+
 ###
 
+#using login user's accessToken to authorize and verify 
 PUT http://localhost:3000/user/account
-Authorization: Basic eyJhbGciOiJIUzI1NiJ9.RXZlQGRvbWFpbi5jb20.Yv4Wxu-JLHvZ67xQnD9h783vUWbj8dIGq6Pyu_ggPIw
+Authorization: Basic eyJhbGciOiJIUzI1NiJ9.bmV3YWNjQGRvbWFpbi5jb20.SzEaREIFhNgOQ5gWbHYw7poh_6encpzPp8a06lBL-wE
 Content-Type: application/json
 
 {
     "firstName": "Adam",
-    "LastName": "sanders"
+    "LastName": "sanders",
+    "password": "newacc"
 }
+
+
+###
+#creating tickets with authentication token
+POST http://localhost:3000/user/tickets
+Authorization: Basic eyJhbGciOiJIUzI1NiJ9.bmV3YWNjQGRvbWFpbi5jb20.SzEaREIFhNgOQ5gWbHYw7poh_6encpzPp8a06lBL-wE
+Content-Type: application/json
+
+{
+    "message": "hello i have a complaint"
+}
+
+###
+
+#getting tickets based on the authentication token
+GET http://localhost:3000/user/tickets
+Authorization: Basic eyJhbGciOiJIUzI1NiJ9.bmV3YWNjQGRvbWFpbi5jb20.SzEaREIFhNgOQ5gWbHYw7poh_6encpzPp8a06lBL-wE
+
+
+
+
+
 
 
