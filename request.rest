@@ -1,0 +1,39 @@
+GET http://localhost:3000/users
+Authorization: Basic eyJhbGciOiJIUzI1NiJ9.RXZlQGRvbWFpbi5jb20.Yv4Wxu-JLHvZ67xQnD9h783vUWbj8dIGq6Pyu_ggPIw
+
+###
+
+POST http://localhost:3000/login
+Content-Type: application/json
+
+{
+    "username": "Eve@domain.com",
+    "password": "Soword"
+}
+
+
+###
+
+POST http://localhost:3000/signup
+Content-Type: application/json
+
+{
+    "username": "Eve@domain.com",
+    "firstName": "Eve",
+    "LastName": "sinorita",
+    "password": "Soword",
+    "role": "user"
+}
+
+###
+
+PUT http://localhost:3000/user/account
+Authorization: Basic eyJhbGciOiJIUzI1NiJ9.RXZlQGRvbWFpbi5jb20.Yv4Wxu-JLHvZ67xQnD9h783vUWbj8dIGq6Pyu_ggPIw
+Content-Type: application/json
+
+{
+    "firstName": "Adam",
+    "LastName": "sanders"
+}
+
+
