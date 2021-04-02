@@ -1,5 +1,6 @@
 #step 1
 Make sure you have Rest client extention in VS code
+to run server => run command on terminal: npm run devStart 
 
 #step 2
 open request.rest in VS code
